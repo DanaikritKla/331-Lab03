@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import EventCard from '../components/EventCard.vue'
-import EventCard2 from '../components/EventCard2.vue'
 import type { EventItem } from '@/type'
 import { ref, watchEffect, type Ref, computed } from 'vue'
 import EventService from '@/services/EventService'
-import type { Axios, AxiosResponse } from 'axios'
+import type { AxiosResponse } from 'axios'
 import { useRouter } from 'vue-router'
 
 

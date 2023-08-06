@@ -27,7 +27,6 @@
     cursor: pointer;
     border: 1px solid #39495c;
     margin-bottom: 18px;
-    margin-left: 806px;
   }
   
   .event-card:hover {

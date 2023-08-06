@@ -3,7 +3,10 @@ import EventListView from '../views/EventListView.vue'
 import EventListView2 from '../views/EventListView2.vue'
 import AboutView from '../views/AboutView.vue'
 import StudentListView from '../views/StudentListView.vue'
-import EventDetailView from '@/views/EventDetailView.vue'
+import EventDetailView from "../views/event/EventDetailView.vue"
+import EventEditView from "../views/event/EventEditView.vue"
+import EventRegisterView from "../views/event/EventRegisterView.vue"
+import EventLayoutView from '../views/event/EventLayoutView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,11 +35,33 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: AboutView
     },
+
     {
       path: '/event/:id',
-      name: 'event-detail',
-      component: EventDetailView,
-      props: true
+      name: 'event-layout',
+      component: EventLayoutView,
+      props: true,
+
+      children: [
+        { 
+          path: '',
+          name: 'event-detail',
+          component: EventDetailView,
+          props: true
+      },
+        {
+          path: 'edit',
+          name: 'event-edit',
+          props: true,
+          component: EventEditView
+      },
+        {
+          path: 'register',
+          name: 'event-register',
+          props: true,
+          component: EventRegisterView
+        }
+      ]
     }
   ]
 })

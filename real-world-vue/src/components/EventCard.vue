@@ -18,6 +18,7 @@
             require: true
     }
 })
+
   </script>
   
   <style scoped>
